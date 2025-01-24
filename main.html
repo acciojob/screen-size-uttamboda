@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Window Size Display</title>
+    <title>Window Size</title>
     <style>
-        #sizeInfo {
+        body {
             font-family: Arial, sans-serif;
-            margin-top: 20px;
+            margin: 0;
+            padding: 20px;
+        }
+
+        #sizeInfo {
             text-align: center;
+            font-size: 24px;
+            padding: 10px;
+            border: 2px solid #333;
+            width: fit-content;
+            margin: 0 auto;
         }
     </style>
 </head>
@@ -20,9 +29,10 @@
 
 <script>
     function updateSize() {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        document.querySelector('#sizeInfo h1').textContent = `Width: ${width} and Height: ${height}`;
+        const width = window.innerWidth;  
+        const height = window.innerHeight; 
+        const sizeInfo = document.querySelector('#sizeInfo h1'); 
+        sizeInfo.textContent = `Width: ${width} and Height: ${height}`; 
     }
 
     updateSize();
